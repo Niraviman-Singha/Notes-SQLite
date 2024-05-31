@@ -8,7 +8,7 @@ android {
         viewBinding = true
     }
     namespace = "com.example.notessqlite"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "com.example.notessqlite"
