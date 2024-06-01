@@ -13,7 +13,7 @@ class NotesAdapter(private var notes:List<Note>, context: Context) : RecyclerVie
     class NoteViewHolder(itemView: View):RecyclerView.ViewHolder(itemView) {
         val titleTV: TextView = itemView.findViewById(R.id.titleTV)
         val contentTV: TextView = itemView.findViewById(R.id.contentTV)
-        val updateBTN: ImageView = itemView.findViewById(R.id.updateSaveButton)
+        val updateBTN: ImageView = itemView.findViewById(R.id.updateBTN)
 
     }
 
@@ -30,7 +30,7 @@ class NotesAdapter(private var notes:List<Note>, context: Context) : RecyclerVie
         holder.contentTV.text = note.content
 
         holder.updateBTN.setOnClickListener {
-            val intent = Intent(holder.itemView.context, UpdateActivity::class.java).apply {
+            val intent = Intent(holder.itemView.context, UpdateNoteActivity::class.java).apply {
                 putExtra("note_id", note.id)
             }
             holder.itemView.context.startActivity(intent)
